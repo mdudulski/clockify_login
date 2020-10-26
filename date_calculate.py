@@ -16,3 +16,5 @@ def getlastworkingday(day):
         if checkifworkingday(day) is True:
             bool = False
     return day.strftime('%Y-%m-%d')
+
+

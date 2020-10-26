@@ -43,7 +43,7 @@ class ClockifyApiHandler:
         return request_json
 
     def clockify_add_new_time_entry(self, start_datetime, end_datetime, description, project_id, task_id):
-        requests.post(
+        request = requests.post(
             self.BASE_URL + '/workspaces/' + self._get_workspaces_id() +
             '/time-entries',
             headers=self.HEADERS,
@@ -55,3 +55,4 @@ class ClockifyApiHandler:
                 , "projectId": project_id
                 , "taskId": task_id
             })
+        return request.text
